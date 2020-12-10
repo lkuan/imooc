@@ -1,0 +1,14 @@
+apply plugin: 'com.huawei.ohos.hap'
+ohos {
+    compileSdkVersion 3
+    defaultConfig {
+        compatibleSdkVersion 3
+    }
+    
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.devio.hi.json:hijson:1.0.0'
+    testCompile'junit:junit:4.12'
+}

@@ -1,0 +1,180 @@
+鸿蒙天气
+天气接口
+https://www.sojson.com/blog/305.html
+
+api
+http://t.weather.itboy.net/api/weather/city/+city_code
+
+city_code
+https://github.com/baichengzhou/weather.api/blob/master/src/main/resources/citycode-2019-08-23.json
+
+json数据示例
+{
+    "time": "2018-09-22 12:37:21",//系统更新时间
+    "cityInfo": {
+        "city": "天津市",  //请求城市
+        "cityKey": "101030100",//请求ID
+        "parent": "天津",     //上级，一般是省份
+        "updateTime": "12:32"//天气更新时间
+    },
+    "date": "20180922",     //当前天气的当天日期
+    "message": "Success !", //返回message
+    "status": 200,          //返回状态
+    "data": {
+        "shidu": "22%",     //湿度
+        "pm25": 15.0,       //pm2.5
+        "pm10": 46.0,       //pm10
+        "quality": "优",    //空气质量
+        "wendu": "24",      //温度
+        "ganmao": "各类人群可自由活动",//感冒提醒（指数）
+        "forecast": [//今天+未来14天
+            {
+                "date": "22",
+                "ymd": "2018-09-22",   //年月日  （新增）
+                "week": "星期六",       //星期 （新增）
+                "sunrise": "05:57",
+                "high": "高温 26.0℃",
+                "low": "低温 15.0℃",
+                "sunset": "18:10",
+                "aqi": 55.0,
+                "fx": "西北风",
+                "fl": "4-5级",
+                "type": "晴",
+                "notice": "愿你拥有比阳光明媚的心情"
+            },
+            {
+                "date": "23",
+                "ymd": "2018-09-22",   //年月日  （新增）
+                "week": "星期日",       //星期 （新增）
+                "sunrise": "05:58",
+                "high": "高温 23.0℃",
+                "low": "低温 14.0℃",
+                "sunset": "18:09",
+                "aqi": 29.0,
+                "fx": "西北风",
+                "fl": "4-5级",
+                "type": "晴",
+                "notice": "愿你拥有比阳光明媚的心情"
+            },
+            {
+                "date": "24",
+                "ymd": "2018-09-22",   //年月日  （新增）
+                "week": "星期一",       //星期 （新增）
+                "sunrise": "05:59",
+                "high": "高温 24.0℃",
+                "low": "低温 15.0℃",
+                "sunset": "18:07",
+                "aqi": 25.0,
+                "fx": "西北风",
+                "fl": "<3级",
+                "type": "晴",
+                "notice": "愿你拥有比阳光明媚的心情"
+            },
+            {
+                "date": "25",
+                "ymd": "2018-09-22",   //年月日  （新增）
+                "week": "星期二",       //星期 （新增）
+                "sunrise": "06:00",
+                "high": "高温 24.0℃",
+                "low": "低温 16.0℃",
+                "sunset": "18:05",
+                "aqi": 56.0,
+                "fx": "西南风",
+                "fl": "<3级",
+                "type": "晴",
+                "notice": "愿你拥有比阳光明媚的心情"
+            },
+            {
+                "date": "26",
+                "ymd": "2018-09-22",   //年月日  （新增）
+                "week": "星期三",       //星期 （新增）
+                "sunrise": "06:01",
+                "high": "高温 24.0℃",
+                "low": "低温 17.0℃",
+                "sunset": "18:04",
+                "aqi": 86.0,
+                "fx": "西南风",
+                "fl": "3-4级",
+                "type": "阴",
+                "notice": "不要被阴云遮挡住好心情"
+            }
+        ]
+    }
+}
+
+参数错误
+{
+    "time": "2018-09-22 12:45:29",
+    "message": "CityId不在返回之内。",
+    "status":403
+}
+
+参数数位不对
+{
+    "message": "Request resource not found.",
+    "status": 404
+}
+
+////////////////////////////////////////////////////////////////////////////
+接口
+http://wthrcdn.etouch.cn/weather_mini?citykey=101010100
+json数据
+{
+    "data": {
+        "yesterday": {
+            "date": "8日星期二",
+            "high": "高温 2℃",
+            "fx": "西北风",
+            "low": "低温 -6℃",
+            "fl": "<![CDATA[1级]]>",
+            "type": "多云"
+        },
+        "city": "北京",
+        "forecast": [
+            {
+                "date": "9日星期三",
+                "high": "高温 4℃",
+                "fengli": "<![CDATA[1级]]>",
+                "low": "低温 -5℃",
+                "fengxiang": "西北风",
+                "type": "晴"
+            },
+            {
+                "date": "10日星期四",
+                "high": "高温 6℃",
+                "fengli": "<![CDATA[1级]]>",
+                "low": "低温 -4℃",
+                "fengxiang": "西北风",
+                "type": "晴"
+            },
+            {
+                "date": "11日星期五",
+                "high": "高温 4℃",
+                "fengli": "<![CDATA[2级]]>",
+                "low": "低温 -5℃",
+                "fengxiang": "东北风",
+                "type": "多云"
+            },
+            {
+                "date": "12日星期六",
+                "high": "高温 5℃",
+                "fengli": "<![CDATA[1级]]>",
+                "low": "低温 -5℃",
+                "fengxiang": "西北风",
+                "type": "多云"
+            },
+            {
+                "date": "13日星期天",
+                "high": "高温 0℃",
+                "fengli": "<![CDATA[3级]]>",
+                "low": "低温 -8℃",
+                "fengxiang": "西北风",
+                "type": "晴"
+            }
+        ],
+        "ganmao": "感冒多发期，适当减少外出频率，适量补充水分，适当增减衣物。",
+        "wendu": "0"
+    },
+    "status": 1000,
+    "desc": "OK"
+}

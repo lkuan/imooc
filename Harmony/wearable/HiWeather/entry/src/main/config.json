@@ -1,0 +1,84 @@
+{
+  "app": {
+    "bundleName": "com.amos.weather",
+    "vendor": "amos",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 3
+    }
+  },
+  "deviceConfig": {
+    "default": {
+      "network": {
+        "usesCleartext": true,
+        "securityConfig": {
+          "domainSettings": {
+            "cleartextPermitted": true,
+            "domains": [
+              {
+                "subdomains": true,
+                "name": "t.weather.itboy.net"
+              },
+              {
+                "subdomains": true,
+                "name": "wthrcdn.etouch.cn"
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "module": {
+    "package": "com.amos.weather",
+    "name": ".Weather",
+    "reqCapabilities": [
+      "video_support"
+    ],
+    "deviceType": [
+      "wearable"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "landscape",
+        "formEnabled": false,
+        "name": "com.amos.weather.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "Weather",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.INTERNET"
+      },
+      {
+        "name": "ohos.permission.GET_NETWORK_INFO"
+      },
+      {
+        "name": "ohos.permission.SET_NETWORK_INFO"
+      }
+    ]
+  }
+}
